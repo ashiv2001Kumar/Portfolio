@@ -12,13 +12,13 @@ export const profile = {
   email: "ashivkumar6@gmail.com",
   availability: "Open to new projects",
   bio: [
-    "I'm a full stack developer who enjoys turning ideas into fast, polished products. I work across the stack, from pixel-perfect React interfaces to reliable APIs and databases.",
-    "Most of my work lives in the livewire, Laravel and Django ecosystems. I care about clean architecture, accessible UI and performance that people can feel.",
+    "I'm a full stack developer who enjoys turning ideas into fast, polished products. I work across the stack, from clean React interfaces to reliable APIs and databases.",
+    "Most of my work lives in the Laravel, Livewire and Django ecosystems. I care about clean architecture, readable code and products that actually work for real users.",
   ],
   stats: [
     { value: "3+", label: "Years building" },
     { value: "25+", label: "Projects shipped" },
-    { value: "11", label: "Core technologies" },
+    { value: "8", label: "Core technologies" },
   ],
 } as const;
 
@@ -40,97 +40,94 @@ export const navLinks = [
 export type SectionId = (typeof navLinks)[number]["id"];
 
 export const technologies = [
-  { name: "Next.js", group: "Frontend", level: 92 },
-  { name: "React", group: "Frontend", level: 94 },
-  { name: "TypeScript", group: "Frontend", level: 88 },
-  { name: "JavaScript", group: "Frontend", level: 93 },
-  { name: "Laravel", group: "Backend", level: 89 },
-  { name: "PHP", group: "Backend", level: 87 },
   { name: "Python", group: "Backend", level: 84 },
   { name: "Django", group: "Backend", level: 82 },
+  { name: "Laravel", group: "Backend", level: 89 },
+  { name: "Livewire", group: "Backend", level: 86 },
+  { name: "Git", group: "Data & Ops", level: 88 },
   { name: "MySQL", group: "Data & Ops", level: 86 },
-  { name: "Docker", group: "Data & Ops", level: 78 },
-  { name: "Git", group: "Data & Ops", level: 90 },
+  { name: "JavaScript", group: "Frontend", level: 88 },
+  { name: "React", group: "Frontend", level: 85 },
 ] as const;
 
 export const skillGroups = [
   {
     title: "Frontend",
     code: "UI.01",
-    description: "Responsive, accessible interfaces with smooth motion and solid state management.",
-    items: ["Next.js App Router", "React", "TypeScript", "Tailwind CSS", "Animation"],
+    description: "Responsive interfaces built with JavaScript and React, focused on clean UI and good user experience.",
+    items: ["JavaScript", "React", "Basic React"],
   },
   {
     title: "Backend",
     code: "API.02",
-    description: "REST APIs, auth, queues and admin panels that stay maintainable as they grow.",
-    items: ["Laravel", "Django", "REST APIs", "Authentication", "Testing"],
+    description: "Full stack web apps with Laravel and Livewire, REST APIs, and Django for Python-based backends.",
+    items: ["Laravel", "Livewire", "Django", "REST APIs", "PHP"],
   },
   {
-    title: "Data & DevOps",
+    title: "Data & Tools",
     code: "OPS.03",
-    description: "Relational data modelling, containerised environments and clean Git workflows.",
-    items: ["MySQL", "Docker", "Git", "CI/CD", "Linux"],
+    description: "Relational data modelling with MySQL and version control with Git.",
+    items: ["MySQL", "Git"],
   },
 ] as const;
 
 export const projects = [
   {
-    name: "Lumen Store",
+    name: "CareAssign",
     code: "PRJ-01",
     description:
-      "A glassmorphic e-commerce storefront with a fluid catalogue, live cart drawer and a checkout flow tuned for speed.",
-    image: "/projects/lumen.jpg",
-    tech: ["Next.js", "TypeScript", "Laravel", "MySQL"],
-    github: "https://github.com/ashivkumar/lumen-store",
-    live: "https://lumen.ashivkumar.dev",
+      "A healthcare staff scheduling platform built during my internship. Implemented shift management, calendar-based scheduling using FullCalendar API, and backend APIs with Django.",
+    image: "/projects/careassign.jpg",
+    tech: ["Django", "Python", "FullCalendar API", "MySQL"],
+    github: "",
+    live: "https://careassign.com/",
   },
   {
-    name: "Nimbus Analytics",
+    name: "Boardnect",
     code: "PRJ-02",
     description:
-      "A real-time analytics dashboard with interactive charts, geo insights and role-based reporting for growing teams.",
-    image: "/projects/nimbus.jpg",
-    tech: ["React", "Django", "Python", "Docker"],
-    github: "https://github.com/ashivkumar/nimbus-analytics",
-    live: "https://nimbus.ashivkumar.dev",
+      "A board management software designed for nonprofits — centralising agendas, documents, votes and meeting scheduling in one place.",
+    image: "/projects/boardnect.jpg",
+    tech: ["Laravel", "Livewire", "Stripe", "MySQL"],
+    github: "https://github.com/ashivkumar/boardnect",
+    live: "https://dev.boardnect.com",
   },
   {
-    name: "Pulse Monitor",
+    name: "CM Di Yogshala",
     code: "PRJ-03",
     description:
-      "An infrastructure monitoring console that streams service health, alerts and dependency graphs as they happen.",
-    image: "/projects/pulse.jpg",
-    tech: ["Next.js", "PHP", "Laravel", "Git"],
-    github: "https://github.com/ashivkumar/pulse-monitor",
-    live: "https://pulse.ashivkumar.dev",
+      "A government portal for Punjab's CM Di Yogshala initiative. Built REST APIs, implemented Firebase push notifications, and handled citizen registration for free yoga sessions organised across the state.",
+    image: "/projects/yogshala.jpg",
+    tech: ["Laravel", "MySQL", "Firebase", "REST APIs"],
+    github: "",
+    live: "https://cmdiyogshala.punjab.gov.in/",
   },
 ] as const;
 
 export const experience = [
   {
     year: "2024",
-    role: "Full Stack Developer",
-    company: "Freelance",
+    role: "Master's Degree",
+    company: "University",
     description:
-      "Built websites and web apps for small businesses: Laravel back offices, React front ends and MySQL data models.",
-    tags: ["Laravel", "React", "MySQL"],
+      "Completed my Master's degree, then joined a company on 2 Dec 2024 as a Backend Developer Intern, working with Laravel, Django and MySQL.",
+    tags: ["Laravel", "Django", "MySQL"],
   },
   {
     year: "2025",
-    role: "Software Developer",
-    company: "Product Studio",
+    role: "Backend Developer",
+    company: "Full-time Employee",
     description:
-      "Shipped client products end to end with Next.js and Django, from API design to deployment with Docker.",
-    tags: ["Next.js", "Django", "Docker"],
+      "Completed 8 months of internship and transitioned to a full-time employee on 23 August 2025, taking on more responsibility across backend systems.",
+    tags: ["Laravel", "Django", "Python"],
   },
   {
     year: "2026",
-    role: "Full Stack Developer",
+    role: "Backend Developer",
     company: "Current Role",
     description:
-      "Leading feature work across the stack, improving performance and building reusable UI systems in TypeScript.",
-    tags: ["TypeScript", "Next.js", "Laravel"],
+      "Working as a Backend Developer, building and maintaining APIs and server-side features using Laravel, Django and MySQL.",
+    tags: ["Laravel", "Django", "MySQL"],
     current: true,
   },
 ] as const;

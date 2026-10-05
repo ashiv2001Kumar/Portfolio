@@ -341,16 +341,7 @@ body {
   }
 
   .reveal {
-    opacity: 0;
-    transform: translate3d(0, 28px, 0);
-    transition:
-      opacity 0.8s ease,
-      transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
-    transition-delay: var(--d, 0s);
-  }
-  .reveal.is-visible {
-    opacity: 1;
-    transform: none;
+    /* Animations are now handled inline by the Reveal component. */
   }
 
   .scanline {
@@ -496,11 +487,11 @@ body {
     transform: translate3d(0, 0, 0);
     opacity: 0;
   }
-  15% {
-    opacity: var(--o, 0.6);
+  12% {
+    opacity: var(--o, 0.85);
   }
-  85% {
-    opacity: var(--o, 0.6);
+  88% {
+    opacity: var(--o, 0.85);
   }
   100% {
     transform: translate3d(var(--dx, 20px), -120px, 0);
@@ -532,6 +523,26 @@ body {
   50% {
     transform: translate3d(0, -6px, 0);
   }
+}
+
+@keyframes star-twinkle {
+  0%, 100% { opacity: var(--o, 0.85); transform: scale(1); }
+  50%       { opacity: 1; transform: scale(2); }
+}
+
+@keyframes welcome-bar {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+@keyframes ripple-expand {
+  0%   { width: 0; height: 0; opacity: 0.9; }
+  100% { width: 220px; height: 220px; margin-left: -110px; margin-top: -110px; opacity: 0; }
+}
+
+@keyframes ripple-flash {
+  0%   { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%,-50%) scale(3); }
 }
 
 @media (prefers-reduced-motion: reduce) {

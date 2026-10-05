@@ -21,6 +21,7 @@ export default function HeroStage({ panel }: { panel: ReactNode }) {
   const started = useRef(false);
   const [layout, setLayout] = useState<SceneLayout | null>(null);
   const [startAt, setStartAt] = useState<number | null>(null);
+  const [seated, setSeated] = useState(false);
   // Which figure plays: the 3D model when one is configured and loads, otherwise the drawn one.
   const [figure, setFigure] = useState<"pending" | "3d" | "2d">(CHARACTER_MODEL ? "pending" : "2d");
   const reduced = useReducedMotion();
@@ -73,6 +74,18 @@ export default function HeroStage({ panel }: { panel: ReactNode }) {
     };
   }, [reduced, figure]);
 
+  // Track when the character finishes sitting down so the holo panel can appear.
+  useEffect(() => {
+    if (reduced) { setSeated(true); return; }
+    if (startAt === null || layout === null) return;
+    // sit[1] is when he's fully seated; add a tiny buffer for the settle animation.
+    const delay = layout.t.sit[1] * 1000 + 200;
+    const elapsed = performance.now() - startAt;
+    const remaining = Math.max(0, delay - elapsed);
+    const timer = setTimeout(() => setSeated(true), remaining);
+    return () => clearTimeout(timer);
+  }, [startAt, layout, reduced]);
+
   return (
     <>
       <div
@@ -90,7 +103,7 @@ export default function HeroStage({ panel }: { panel: ReactNode }) {
       >
         {layout && (
           <>
-            <FuturisticDesk layout={layout} />
+            <FuturisticDesk layout={layout} seated={seated} />
             <AnimeCharacter layout={layout} startAt={startAt} reduced={reduced} hideFigure={figure !== "2d"} />
             {CHARACTER_MODEL && figure !== "2d" && (
               <Character3D

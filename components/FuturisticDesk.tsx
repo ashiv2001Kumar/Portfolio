@@ -9,7 +9,7 @@ const LIP = 0.022;
 const bars = [38, 62, 46, 80, 58, 92, 70, 54];
 
 /** The workstation around the character: floor, chair, desk and holographic display, all positioned from the scene layout. */
-export default function FuturisticDesk({ layout }: { layout: SceneLayout }) {
+export default function FuturisticDesk({ layout, seated = false }: { layout: SceneLayout; seated?: boolean }) {
   const { u, floorY, stopX, height } = layout;
   const deskLeft = stopX + DESK.left * u;
   const deskWidth = (DESK.right - DESK.left) * u;
@@ -169,7 +169,16 @@ export default function FuturisticDesk({ layout }: { layout: SceneLayout }) {
       {/* Holographic display on the desk. */}
       <div
         className="pointer-events-none absolute"
-        style={{ left: holoLeft, top: deskTop - holoHeight - 0.03 * u, width: holoWidth, height: holoHeight + 0.03 * u, zIndex: Z.holo }}
+        style={{
+          left: holoLeft,
+          top: deskTop - holoHeight - 0.03 * u,
+          width: holoWidth,
+          height: holoHeight + 0.03 * u,
+          zIndex: Z.holo,
+          opacity: seated ? 1 : 0,
+          transform: seated ? "none" : "translate3d(0, 14px, 0)",
+          transition: "opacity 0.7s cubic-bezier(0.2,0.7,0.2,1), transform 0.8s cubic-bezier(0.2,0.7,0.2,1)",
+        }}
       >
         <div
           className="absolute rounded-[50%]"
@@ -221,7 +230,16 @@ export default function FuturisticDesk({ layout }: { layout: SceneLayout }) {
       {/* Floating data chips around the workstation. */}
       <div
         className="glass-soft holo-float pointer-events-none absolute rounded-lg px-[0.9em] py-[0.6em] font-mono text-ice/80"
-        style={{ left: stopX + 0.26 * u, top: floorY - 0.98 * u, fontSize: font * 1.05, zIndex: Z.holo, animationDelay: "-2s" }}
+        style={{
+          left: stopX + 0.26 * u,
+          top: floorY - 0.98 * u,
+          fontSize: font * 1.05,
+          zIndex: Z.holo,
+          animationDelay: "-2s",
+          opacity: seated ? 1 : 0,
+          transform: seated ? "none" : "translate3d(8px, 0, 0)",
+          transition: "opacity 0.6s cubic-bezier(0.2,0.7,0.2,1) 0.15s, transform 0.7s cubic-bezier(0.2,0.7,0.2,1) 0.15s",
+        }}
       >
         <div className="tracking-[0.2em] text-ice/45">DEPLOY</div>
         <div className="mt-[0.3em] flex items-center gap-[0.5em]">
@@ -231,7 +249,16 @@ export default function FuturisticDesk({ layout }: { layout: SceneLayout }) {
       {!layout.compact && (
         <div
           className="glass-soft holo-float pointer-events-none absolute rounded-lg px-[0.9em] py-[0.6em] font-mono text-ice/80"
-          style={{ left: stopX - 0.5 * u, top: floorY - 1.14 * u, fontSize: font * 1.05, zIndex: Z.holo, animationDelay: "-4s" }}
+          style={{
+            left: stopX - 0.5 * u,
+            top: floorY - 1.14 * u,
+            fontSize: font * 1.05,
+            zIndex: Z.holo,
+            animationDelay: "-4s",
+            opacity: seated ? 1 : 0,
+            transform: seated ? "none" : "translate3d(-8px, 0, 0)",
+            transition: "opacity 0.6s cubic-bezier(0.2,0.7,0.2,1) 0.3s, transform 0.7s cubic-bezier(0.2,0.7,0.2,1) 0.3s",
+          }}
         >
           <div className="tracking-[0.2em] text-ice/45">LATENCY</div>
           <div className="mt-[0.3em] text-cyan">24 ms</div>

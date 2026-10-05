@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import ThemeScript from "@/components/ThemeScript";
+import WelcomeOverlay from "@/components/WelcomeOverlay";
 import { profile } from "@/lib/data";
 import "./globals.css";
 
@@ -42,7 +43,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         <ThemeScript />
       </head>
-      <body>{children}</body>
+      <body>
+        <WelcomeOverlay />
+        {children}
+      </body>
     </html>
   );
 }

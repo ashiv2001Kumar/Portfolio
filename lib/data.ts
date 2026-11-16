@@ -8,8 +8,9 @@ export const profile = {
   firstName: "Ashiv",
   role: "Full Stack Developer",
   tagline: "Building modern digital experiences with  Laravel , livewire & Django.",
-  location: "India · Remote",
+  location: "Mohali, Punjab, India",
   email: "ashivkumar6@gmail.com",
+  phone: "+91 8629012170",
   availability: "Open to new projects",
   bio: [
     "I'm a full stack developer who enjoys turning ideas into fast, polished products. I work across the stack, from clean React interfaces to reliable APIs and databases.",
@@ -80,7 +81,8 @@ export const projects = [
     image: "/projects/careassign.jpg",
     tech: ["Django", "Python", "FullCalendar API", "MySQL"],
     github: "",
-    live: "https://careassign.com/",
+    live: "",
+    // live: "https://careassign.com/",
   },
   {
     name: "Boardnect",
@@ -101,6 +103,16 @@ export const projects = [
     tech: ["Laravel", "MySQL", "Firebase", "REST APIs"],
     github: "",
     live: "https://cmdiyogshala.punjab.gov.in/",
+  },
+  {
+    name: "One Energy Window",
+    code: "PRJ-04",
+    description:
+      "A home energy-efficiency site for scheduling in-home window consultations. Next.js frontend with a Laravel API and MySQL for leads, estimates and content.",
+    image: "/projects/one-energy-window.jpg",
+    tech: ["Next.js", "Laravel", "MySQL"],
+    github: "",
+    live: "https://dev.estimatediy.com/",
   },
 ] as const;
 

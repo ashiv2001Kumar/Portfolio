@@ -102,77 +102,77 @@
 
 :root[data-theme="light"] {
   color-scheme: light;
-  --bg: #f7f7f5;
-  --bg-2: #edeeea;
-  --glass: #ffffff;
+  --bg: #e4e6e1;
+  --bg-2: #d5d8d2;
+  --glass: #eef0eb;
   --cyan: #5b7b62;
   --sky: #7a9a80;
-  --ice: #4a4f4b;
-  --ink: #2b2e2c;
-  --mute: #5c615d;
-  --label: #7c817d;
+  --ice: #2f3431;
+  --ink: #171a18;
+  --mute: #3a403c;
+  --label: #3f4642;
   --accent-rgb: 91 123 98;
   --accent-2-rgb: 122 154 128;
   --shine-rgb: 255 255 255;
-  --atmo-rgb: 160 166 158;
-  --atmo-2-rgb: 180 203 184;
-  --shadow: rgb(28 31 29 / 0.08);
+  --atmo-rgb: 140 148 138;
+  --atmo-2-rgb: 160 180 162;
+  --shadow: rgb(28 31 29 / 0.12);
 
-  --glass-fill-1: rgb(255 255 255 / 0.82);
-  --glass-fill-2: rgb(255 255 255 / 0.82);
-  --glass-line: #daddd6;
-  --glass-shadow: inset 0 1px 0 #ffffff, 0 1px 2px rgb(28 31 29 / 0.04), 0 20px 50px rgb(28 31 29 / 0.08);
+  --glass-fill-1: rgb(238 240 235 / 0.88);
+  --glass-fill-2: rgb(229 232 226 / 0.78);
+  --glass-line: #c4c9c1;
+  --glass-shadow: inset 0 1px 0 rgb(255 255 255 / 0.55), 0 1px 2px rgb(28 31 29 / 0.06), 0 18px 40px rgb(28 31 29 / 0.1);
 
-  --glow-dot: 0 0 0 3px rgb(91 123 98 / 0.12);
-  --glow-dot-strong: 0 0 0 4px rgb(91 123 98 / 0.16);
+  --glow-dot: 0 0 0 3px rgb(91 123 98 / 0.14);
+  --glow-dot-strong: 0 0 0 4px rgb(91 123 98 / 0.18);
   --glow-line: none;
-  --glow-hover: 0 28px 60px -24px rgb(28 31 29 / 0.18);
+  --glow-hover: 0 28px 60px -24px rgb(28 31 29 / 0.22);
   --glow-logo: none;
   --glow-nav: 0 0 8px rgb(122 154 128 / 0.55);
   --glow-text: none;
   --nav-active: #5b7b62;
-  --nav-scrolled: rgb(255 255 255 / 0.92);
+  --nav-scrolled: rgb(228 230 225 / 0.94);
 
   --btn-bg: #5b7b62;
   --btn-bg-hover: #4a6651;
   --btn-ink: #ffffff;
-  --btn-shadow: 0 1px 2px rgb(28 31 29 / 0.08), 0 6px 16px -8px rgb(91 123 98 / 0.45);
-  --btn-shadow-hover: 0 1px 2px rgb(28 31 29 / 0.08), 0 12px 28px -10px rgb(91 123 98 / 0.6);
-  --ghost-bg: #ffffff;
-  --ghost-line: #cfd3cc;
-  --ghost-bg-hover: #eef3ee;
-  --ghost-line-hover: #b4cbb8;
+  --btn-shadow: 0 1px 2px rgb(28 31 29 / 0.1), 0 6px 16px -8px rgb(91 123 98 / 0.45);
+  --btn-shadow-hover: 0 1px 2px rgb(28 31 29 / 0.1), 0 12px 28px -10px rgb(91 123 98 / 0.6);
+  --ghost-bg: #e8ebe5;
+  --ghost-line: #b8beb6;
+  --ghost-bg-hover: #dde3db;
+  --ghost-line-hover: #9fb5a3;
 
-  --sky-top: #f7f7f5;
-  --sky-mid: #f7f7f5;
-  --sky-low: #f3f4f1;
-  --sky-horizon: #edeeea;
-  --sky-bottom: #edeeea;
-  --city-far: #e6e7e3;
-  --city-near: #e3e5e0;
-  --window: #b4cbb8;
-  --vignette: rgb(28 31 29 / 0.03);
-  --particle: #a3a8a2;
+  --sky-top: #e6e8e3;
+  --sky-mid: #e4e6e1;
+  --sky-low: #dcdfd9;
+  --sky-horizon: #d5d8d2;
+  --sky-bottom: #d0d4cd;
+  --city-far: #c8ccc5;
+  --city-near: #bcc1b9;
+  --window: #9fb5a3;
+  --vignette: rgb(28 31 29 / 0.06);
+  --particle: #8e948c;
   --particle-glow: none;
 
-  --scene-ambient: radial-gradient(50% 55% at 50% 62%, rgb(122 154 128 / 0.07), transparent 70%);
-  --scene-pool: rgb(180 203 184 / 0.4);
-  --floor-grid-x: rgb(91 123 98 / 0.06);
-  --floor-grid-y: rgb(91 123 98 / 0.06);
-  --desk-top-1: #ffffff;
-  --desk-top-2: #f1f2ee;
-  --desk-lip-1: #ffffff;
-  --desk-lip-2: #e3e5e0;
-  --desk-front-1: #ffffff;
-  --desk-front-2: #f1f2ee;
-  --desk-front-tint: rgb(122 154 128 / 0.05);
-  --desk-edge: #daddd6;
-  --desk-edge-top: #daddd6;
-  --desk-shadow: 0 30px 60px -28px rgb(28 31 29 / 0.22);
-  --chair-1: #f1f2ee;
-  --chair-2: #cfd3cc;
-  --chair-pad: #e3e5e0;
-  --img-fade: rgb(28 31 29 / 0.28);
+  --scene-ambient: radial-gradient(50% 55% at 50% 62%, rgb(122 154 128 / 0.1), transparent 70%);
+  --scene-pool: rgb(160 180 162 / 0.45);
+  --floor-grid-x: rgb(91 123 98 / 0.08);
+  --floor-grid-y: rgb(91 123 98 / 0.08);
+  --desk-top-1: #eef0eb;
+  --desk-top-2: #dde1db;
+  --desk-lip-1: #e8ebe5;
+  --desk-lip-2: #cfd4cd;
+  --desk-front-1: #e8ebe5;
+  --desk-front-2: #d5d9d3;
+  --desk-front-tint: rgb(122 154 128 / 0.07);
+  --desk-edge: #b8beb6;
+  --desk-edge-top: #b8beb6;
+  --desk-shadow: 0 30px 60px -28px rgb(28 31 29 / 0.28);
+  --chair-1: #e0e3de;
+  --chair-2: #b8beb6;
+  --chair-pad: #cfd4cd;
+  --img-fade: rgb(28 31 29 / 0.34);
 }
 
 html {
@@ -242,6 +242,7 @@ body {
   .hud-label {
     font-family: var(--font-mono);
     font-size: 0.68rem;
+    font-weight: 700;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--label);
@@ -341,16 +342,7 @@ body {
   }
 
   .reveal {
-    opacity: 0;
-    transform: translate3d(0, 28px, 0);
-    transition:
-      opacity 0.8s ease,
-      transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
-    transition-delay: var(--d, 0s);
-  }
-  .reveal.is-visible {
-    opacity: 1;
-    transform: none;
+    /* Animations are now handled inline by the Reveal component. */
   }
 
   .scanline {
@@ -430,17 +422,30 @@ body {
     color: var(--color-ink);
   }
   .name-accent {
-    color: #5b7b62;
+    color: #4a6651;
+    font-weight: 700;
   }
   .hero-role {
-    color: #5b7b62;
+    color: #4a6651;
+    font-weight: 600;
+  }
+
+  .text-mute,
+  .hud-label,
+  .hero-panel p {
+    font-weight: 500;
+  }
+
+  .hero-panel h1 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
   }
 
   /* The bar is nearly opaque white, so a backdrop blur here stays neutral even on GPUs that mangle it. */
   .navbar {
-    background: rgb(255 255 255 / 0.85);
-    border-color: #e3e5e0;
-    box-shadow: 0 8px 30px rgb(28 31 29 / 0.06);
+    background: rgb(228 230 225 / 0.88);
+    border-color: #b8beb6;
+    box-shadow: 0 8px 30px rgb(28 31 29 / 0.1);
     -webkit-backdrop-filter: blur(18px);
     backdrop-filter: blur(18px);
   }
@@ -496,11 +501,11 @@ body {
     transform: translate3d(0, 0, 0);
     opacity: 0;
   }
-  15% {
-    opacity: var(--o, 0.6);
+  12% {
+    opacity: var(--o, 0.85);
   }
-  85% {
-    opacity: var(--o, 0.6);
+  88% {
+    opacity: var(--o, 0.85);
   }
   100% {
     transform: translate3d(var(--dx, 20px), -120px, 0);
@@ -532,6 +537,26 @@ body {
   50% {
     transform: translate3d(0, -6px, 0);
   }
+}
+
+@keyframes star-twinkle {
+  0%, 100% { opacity: var(--o, 0.85); transform: scale(1); }
+  50%       { opacity: 1; transform: scale(2); }
+}
+
+@keyframes welcome-bar {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+@keyframes ripple-expand {
+  0%   { width: 0; height: 0; opacity: 0.9; }
+  100% { width: 220px; height: 220px; margin-left: -110px; margin-top: -110px; opacity: 0; }
+}
+
+@keyframes ripple-flash {
+  0%   { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%,-50%) scale(3); }
 }
 
 @media (prefers-reduced-motion: reduce) {

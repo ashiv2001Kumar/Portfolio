@@ -37,7 +37,7 @@ export default function HolographicPanel() {
         {profile.role}
         <span className="cursor-blink ml-1 text-cyan">_</span>
       </p>
-      <p className="intro-item mt-3 max-w-md text-[0.95rem] leading-relaxed text-mute sm:mt-4 sm:text-lg" style={d(0.72)}>
+      <p className="intro-item mt-3 max-w-md text-[0.95rem] font-medium leading-relaxed text-mute sm:mt-4 sm:text-lg" style={d(0.72)}>
         {profile.tagline}
       </p>
 

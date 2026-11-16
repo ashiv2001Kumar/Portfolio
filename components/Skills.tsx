@@ -31,13 +31,16 @@ export default function Skills() {
                   {techs.map((t) => (
                     <li key={t.name}>
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-ink/90">{t.name}</span>
-                        <span className="font-mono text-xs text-cyan/80">{t.level}%</span>
+                        <span className="font-medium text-ink">{t.name}</span>
+                        <span className="font-mono text-xs font-semibold text-cyan">{t.level}%</span>
                       </div>
-                      <div className="mt-2 h-1 overflow-hidden rounded-full bg-ice/10">
+                      <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-ice/15">
                         <div
-                          className="h-full rounded-full bg-gradient-to-r from-sky to-cyan shadow-[var(--glow-line)]"
-                          style={{ width: `${t.level}%` }}
+                          className="h-full rounded-full shadow-[var(--glow-line)]"
+                          style={{
+                            width: `${t.level}%`,
+                            background: "linear-gradient(90deg, rgb(var(--accent-rgb)), rgb(var(--accent-2-rgb)))",
+                          }}
                         />
                       </div>
                     </li>

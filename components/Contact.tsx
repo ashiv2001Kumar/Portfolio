@@ -57,9 +57,9 @@ export default function Contact() {
         description="Have a project in mind or just want to say hello? Open a channel and I'll get back to you."
       />
 
-      <div className="grid gap-6 lg:grid-cols-12">
-        <Reveal className="lg:col-span-8">
-          <div className="glass hud-corners overflow-hidden rounded-2xl">
+      <div className="grid gap-6 lg:grid-cols-2">
+        <Reveal className="">
+          <div className="glass hud-corners h-full overflow-hidden rounded-2xl">
             <div className="flex items-center gap-2 border-b border-ice/10 bg-bg/50 px-5 py-3">
               <span className="h-2.5 w-2.5 rounded-full bg-rose-400/70" />
               <span className="h-2.5 w-2.5 rounded-full bg-amber-300/70" />
@@ -162,33 +162,91 @@ export default function Contact() {
           </div>
         </Reveal>
 
-        <Reveal className="lg:col-span-4" delay={0.1}>
+        <Reveal className="" delay={0.1}>
           <aside className="glass flex h-full flex-col rounded-2xl p-6 sm:p-8">
-            <span className="hud-label">direct line</span>
-            <a href={`mailto:${profile.email}`} className="mt-3 break-all font-display text-lg font-semibold text-ink hover:text-cyan">
-              {profile.email}
-            </a>
-            <div className="mt-6 flex items-center gap-2.5 text-sm text-mute">
+            <span className="hud-label">get in touch</span>
+            <h3 className="mt-2 font-display text-xl font-semibold text-ink">
+              Let&apos;s <span className="text-cyan">Connect</span>
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-mute">
+              I&apos;m eager to collaborate on impactful projects. Let&apos;s connect and build something great together.
+            </p>
+
+            {/* Contact detail rows */}
+            <ul className="mt-6 space-y-3">
+              {/* Email */}
+              <li>
+                <a
+                  href={`mailto:${profile.email}`}
+                  className="group flex items-center gap-4 rounded-xl border border-ice/10 bg-ice/[0.03] px-4 py-3.5 transition-colors hover:border-cyan/40 hover:bg-cyan/[0.06]"
+                >
+                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-cyan/10">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-cyan" aria-hidden="true">
+                      <rect x="2" y="4" width="20" height="16" rx="2" />
+                      <path d="m2 7 10 7 10-7" />
+                    </svg>
+                  </span>
+                  <div className="min-w-0">
+                    <p className="hud-label">email</p>
+                    <p className="mt-0.5 truncate text-sm text-ink group-hover:text-cyan">{profile.email}</p>
+                  </div>
+                </a>
+              </li>
+
+              {/* Phone */}
+              <li>
+                <a
+                  href={`tel:${profile.phone}`}
+                  className="group flex items-center gap-4 rounded-xl border border-ice/10 bg-ice/[0.03] px-4 py-3.5 transition-colors hover:border-cyan/40 hover:bg-cyan/[0.06]"
+                >
+                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-cyan/10">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-cyan" aria-hidden="true">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.06 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                  </span>
+                  <div className="min-w-0">
+                    <p className="hud-label">phone</p>
+                    <p className="mt-0.5 text-sm text-ink group-hover:text-cyan">{profile.phone}</p>
+                  </div>
+                </a>
+              </li>
+
+              {/* Location */}
+              <li>
+                <div className="flex items-center gap-4 rounded-xl border border-ice/10 bg-ice/[0.03] px-4 py-3.5">
+                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-cyan/10">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-cyan" aria-hidden="true">
+                      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </span>
+                  <div className="min-w-0">
+                    <p className="hud-label">location</p>
+                    <p className="mt-0.5 text-sm text-ink">{profile.location}</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            {/* Availability badge */}
+            <div className="mt-5 flex items-center gap-2.5 text-sm text-mute">
               <span className="status-dot" /> {profile.availability}
             </div>
-            <p className="mt-2 text-sm text-mute">{profile.location}</p>
 
-            <div className="mt-8 border-t border-ice/10 pt-6">
-              <span className="hud-label">network</span>
-              <ul className="mt-4 space-y-2.5">
+            {/* Socials */}
+            <div className="mt-6 border-t border-ice/10 pt-6">
+              <span className="hud-label">follow me</span>
+              <ul className="mt-4 flex gap-3">
                 {socials.map((s) => (
                   <li key={s.label}>
                     <a
                       href={s.href}
                       target={s.href.startsWith("http") ? "_blank" : undefined}
                       rel="noreferrer"
-                      className="group flex items-center justify-between rounded-xl border border-ice/10 bg-ice/[0.03] px-4 py-3 text-sm text-ink transition-colors hover:border-cyan/40 hover:bg-cyan/[0.06]"
+                      aria-label={s.label}
+                      className="grid h-10 w-10 place-items-center rounded-xl border border-ice/10 bg-ice/[0.03] font-mono text-xs text-cyan transition-colors hover:border-cyan/40 hover:bg-cyan/[0.08]"
                     >
-                      <span className="flex items-center gap-3">
-                        <span className="grid h-7 w-7 place-items-center rounded-lg bg-cyan/10 font-mono text-[0.65rem] text-cyan">{s.short}</span>
-                        {s.label}
-                      </span>
-                      <span className="text-mute transition-transform group-hover:translate-x-0.5 group-hover:text-cyan">→</span>
+                      {s.short}
                     </a>
                   </li>
                 ))}

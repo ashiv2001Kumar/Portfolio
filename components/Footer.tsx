@@ -49,7 +49,7 @@ export default function Footer() {
             © {new Date().getFullYear()} {profile.name}. All rights reserved.
           </p>
           <p className="flex items-center gap-2">
-            <span className="status-dot !h-1.5 !w-1.5" /> built with next.js · end of transmission
+            <span className="status-dot h-1.5! w-1.5!" /> built with next.js · end of transmission
           </p>
         </div>
       </div>

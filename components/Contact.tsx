@@ -178,7 +178,7 @@ export default function Contact() {
               <li>
                 <a
                   href={`mailto:${profile.email}`}
-                  className="group flex items-center gap-4 rounded-xl border border-ice/10 bg-ice/[0.03] px-4 py-3.5 transition-colors hover:border-cyan/40 hover:bg-cyan/[0.06]"
+                  className="group flex items-center gap-4 rounded-xl border border-ice/10 bg-ice/3 px-4 py-3.5 transition-colors hover:border-cyan/40 hover:bg-cyan/6"
                 >
                   <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-cyan/10">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-cyan" aria-hidden="true">
@@ -197,7 +197,7 @@ export default function Contact() {
               <li>
                 <a
                   href={`tel:${profile.phone}`}
-                  className="group flex items-center gap-4 rounded-xl border border-ice/10 bg-ice/[0.03] px-4 py-3.5 transition-colors hover:border-cyan/40 hover:bg-cyan/[0.06]"
+                  className="group flex items-center gap-4 rounded-xl border border-ice/10 bg-ice/3 px-4 py-3.5 transition-colors hover:border-cyan/40 hover:bg-cyan/6"
                 >
                   <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-cyan/10">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-cyan" aria-hidden="true">
@@ -213,7 +213,7 @@ export default function Contact() {
 
               {/* Location */}
               <li>
-                <div className="flex items-center gap-4 rounded-xl border border-ice/10 bg-ice/[0.03] px-4 py-3.5">
+                <div className="flex items-center gap-4 rounded-xl border border-ice/10 bg-ice/3 px-4 py-3.5">
                   <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-cyan/10">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-cyan" aria-hidden="true">
                       <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
@@ -244,7 +244,7 @@ export default function Contact() {
                       target={s.href.startsWith("http") ? "_blank" : undefined}
                       rel="noreferrer"
                       aria-label={s.label}
-                      className="grid h-10 w-10 place-items-center rounded-xl border border-ice/10 bg-ice/[0.03] font-mono text-xs text-cyan transition-colors hover:border-cyan/40 hover:bg-cyan/[0.08]"
+                      className="grid h-10 w-10 place-items-center rounded-xl border border-ice/10 bg-ice/3 font-mono text-xs text-cyan transition-colors hover:border-cyan/40 hover:bg-cyan/8"
                     >
                       {s.short}
                     </a>

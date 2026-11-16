@@ -148,10 +148,13 @@ function planSteps(distance: number, start: number): Step[] {
     const to = plant(i) + STAND_FEET[foot];
     const last = i === gaps + 1;
     const duration = i === 1 ? STEP_TIME * 0.92 : last ? STEP_TIME * 0.85 : STEP_TIME;
-    // At heel strike the hip is a little behind halfway between the feet.
     const hip = last ? distance : lerp(plant(i - 1), plant(i), 0.47);
     steps.push({ foot, from, to, t0: t, t1: t + duration, hip });
     t += duration;
+  }
+  // Safety: always return at least one step so callers never get undefined
+  if (steps.length === 0) {
+    steps.push({ foot: "near", from: 0, to: distance, t0: start, t1: start + STEP_TIME, hip: distance });
   }
   return steps;
 }
@@ -185,7 +188,7 @@ export function computeLayout(width: number, height: number, panelRight: number)
 
   const distance = Math.max(0.3, (stopX - startX) / u);
   const steps = planSteps(distance, T.walkStart);
-  const walkEnd = steps[steps.length - 1].t1;
+  const walkEnd = steps.length > 0 ? steps[steps.length - 1].t1 : T.walkStart + 1;
   const turn: Range = [walkEnd + 0.08, walkEnd + 0.8];
   const sit: Range = [turn[1] + 0.22, turn[1] + 1.1];
   const settle: Range = [sit[1], sit[1] + 0.45];

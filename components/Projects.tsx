@@ -1,5 +1,5 @@
 import { projects } from "@/lib/data";
-import ProjectCard from "./ProjectCard";
+import ProjectSlider from "./ProjectSlider";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
@@ -12,13 +12,9 @@ export default function Projects() {
         title="Selected Projects"
         description="A few things I've designed and built recently, end to end."
       />
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project, i) => (
-          <Reveal key={project.name} delay={i * 0.08} className="h-full">
-            <ProjectCard project={project} />
-          </Reveal>
-        ))}
-      </div>
+      <Reveal>
+        <ProjectSlider items={projects} />
+      </Reveal>
     </section>
   );
 }

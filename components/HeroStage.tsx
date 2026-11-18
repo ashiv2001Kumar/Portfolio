@@ -43,20 +43,17 @@ export default function HeroStage({ panel }: { panel: ReactNode }) {
     return () => observer.disconnect();
   }, []);
 
-  // Start once his images or model are ready and the stage is in view (on phones it sits below the intro card).
+  // Start once his images or model are ready, the welcome box has cleared, and the stage is in view.
   useEffect(() => {
     const stage = stageRef.current;
     if (reduced || started.current || !stage || figure === "pending") return;
     let cancelled = false;
     let observer: IntersectionObserver | undefined;
-    Promise.all(
-      CHARACTER_IMAGES.map((src) => {
-        const img = new window.Image();
-        img.src = src;
-        return img.decode().catch(() => undefined);
-      }),
-    ).then(() => {
-      if (cancelled) return;
+    let welcomeReady = false;
+    let imagesReady = false;
+
+    const tryStart = () => {
+      if (cancelled || started.current || !welcomeReady || !imagesReady) return;
       observer = new IntersectionObserver(
         ([entry]) => {
           if (!entry.isIntersecting || started.current) return;
@@ -67,16 +64,39 @@ export default function HeroStage({ panel }: { panel: ReactNode }) {
         { threshold: 0.45 },
       );
       observer.observe(stage);
+    };
+
+    const onWelcome = () => {
+      welcomeReady = true;
+      tryStart();
+    };
+    window.addEventListener("portfolio-welcome-done", onWelcome);
+
+    Promise.all(
+      CHARACTER_IMAGES.map((src) => {
+        const img = new window.Image();
+        img.src = src;
+        return img.decode().catch(() => undefined);
+      }),
+    ).then(() => {
+      if (cancelled) return;
+      imagesReady = true;
+      tryStart();
     });
+
     return () => {
       cancelled = true;
       observer?.disconnect();
+      window.removeEventListener("portfolio-welcome-done", onWelcome);
     };
   }, [reduced, figure]);
 
   // Track when the character finishes sitting down so the holo panel can appear.
   useEffect(() => {
-    if (reduced) { setSeated(true); return; }
+    if (reduced) {
+      const t = window.setTimeout(() => setSeated(true), 0);
+      return () => clearTimeout(t);
+    }
     if (startAt === null || layout === null) return;
     // sit[1] is when he's fully seated; add a tiny buffer for the settle animation.
     const delay = layout.t.sit[1] * 1000 + 200;

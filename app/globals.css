@@ -20,159 +20,159 @@
 }
 
 /* Dark is the default; the inline script in the layout sets data-theme before first paint.
-   Dark is black + cyan with holographic glow. Light is ash grey + charcoal + sage green and
-   leans on borders, shadows and contrast instead of glow.
+   Dark is a soft teal night with mint + sky accents (friendlier than pure black/ice).
+   Light is soft sky-wash + teal, with warm readable ink.
    The *-rgb channels feed rgb(var(--x-rgb) / alpha); the --glow-* tokens are box-shadows. */
 :root,
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #07111f;
-  --bg-2: #0b1d33;
-  --glass: #10243a;
-  --cyan: #22d3ee;
+  --bg: #0a1628;
+  --bg-2: #122a42;
+  --glass: #163552;
+  --cyan: #2dd4bf;
   --sky: #38bdf8;
-  --ice: #baf3ff;
+  --ice: #e0f2fe;
   --ink: #f8fafc;
-  --mute: #a8b8c7;
-  --label: rgb(186 243 255 / 0.62);
-  --accent-rgb: 34 211 238;
+  --mute: #b6c7d6;
+  --label: rgb(224 242 254 / 0.7);
+  --accent-rgb: 45 212 191;
   --accent-2-rgb: 56 189 248;
-  --shine-rgb: 186 243 255;
+  --shine-rgb: 224 242 254;
   --atmo-rgb: 56 189 248;
-  --atmo-2-rgb: 34 211 238;
-  --shadow: rgb(0 0 0 / 0.7);
+  --atmo-2-rgb: 45 212 191;
+  --shadow: rgb(0 0 0 / 0.55);
 
-  --glass-fill-1: rgb(16 36 58 / 0.42);
-  --glass-fill-2: rgb(11 29 51 / 0.22);
-  --glass-line: rgb(186 243 255 / 0.14);
+  --glass-fill-1: rgb(22 53 82 / 0.55);
+  --glass-fill-2: rgb(18 42 66 / 0.35);
+  --glass-line: rgb(125 211 252 / 0.22);
   --glass-shadow:
-    inset 0 1px 0 rgb(186 243 255 / 0.08), 0 24px 60px -28px rgb(0 0 0 / 0.7), 0 0 48px -24px rgb(34 211 238 / 0.28);
+    inset 0 1px 0 rgb(224 242 254 / 0.1), 0 24px 60px -28px rgb(0 0 0 / 0.55), 0 0 48px -20px rgb(45 212 191 / 0.28);
 
-  --glow-dot: 0 0 8px #22d3ee;
-  --glow-dot-strong: 0 0 16px #22d3ee;
-  --glow-line: 0 0 10px rgb(34 211 238 / 0.6);
-  --glow-hover: 0 0 50px -18px rgb(34 211 238 / 0.5);
-  --glow-logo: 0 0 18px -4px rgb(34 211 238 / 0.7);
-  --glow-nav: 0 0 10px #22d3ee;
-  --glow-text: 0 0 24px rgb(34 211 238 / 0.35);
-  --nav-active: #f8fafc;
-  --nav-scrolled: rgb(11 29 51 / 0.8);
+  --glow-dot: 0 0 10px #2dd4bf;
+  --glow-dot-strong: 0 0 18px #2dd4bf;
+  --glow-line: 0 0 12px rgb(45 212 191 / 0.55);
+  --glow-hover: 0 0 50px -16px rgb(56 189 248 / 0.45);
+  --glow-logo: 0 0 20px -4px rgb(45 212 191 / 0.7);
+  --glow-nav: 0 0 12px #2dd4bf;
+  --glow-text: 0 0 28px rgb(56 189 248 / 0.35);
+  --nav-active: #f0fdfa;
+  --nav-scrolled: rgb(18 42 66 / 0.86);
 
-  --btn-bg: linear-gradient(120deg, #baf3ff, #22d3ee 55%, #38bdf8);
-  --btn-bg-hover: var(--btn-bg);
-  --btn-ink: #04121f;
-  --btn-shadow: 0 0 0 1px rgb(186 243 255 / 0.4) inset, 0 10px 30px -10px rgb(34 211 238 / 0.65);
-  --btn-shadow-hover: 0 0 0 1px rgb(186 243 255 / 0.6) inset, 0 14px 36px -10px rgb(34 211 238 / 0.85);
-  --ghost-bg: rgb(16 36 58 / 0.55);
-  --ghost-line: rgb(34 211 238 / 0.4);
-  --ghost-bg-hover: rgb(34 211 238 / 0.08);
-  --ghost-line-hover: rgb(34 211 238 / 0.7);
+  --btn-bg: linear-gradient(120deg, #99f6e4, #2dd4bf 45%, #38bdf8);
+  --btn-bg-hover: linear-gradient(120deg, #ccfbf1, #2dd4bf 45%, #7dd3fc);
+  --btn-ink: #042f2e;
+  --btn-shadow: 0 0 0 1px rgb(153 246 228 / 0.45) inset, 0 12px 32px -10px rgb(45 212 191 / 0.55);
+  --btn-shadow-hover: 0 0 0 1px rgb(204 251 241 / 0.55) inset, 0 16px 36px -10px rgb(56 189 248 / 0.55);
+  --ghost-bg: rgb(22 53 82 / 0.55);
+  --ghost-line: rgb(45 212 191 / 0.4);
+  --ghost-bg-hover: rgb(45 212 191 / 0.1);
+  --ghost-line-hover: rgb(56 189 248 / 0.7);
 
-  --sky-top: #030914;
-  --sky-mid: #07111f;
-  --sky-low: #0b2140;
-  --sky-horizon: #133a62;
-  --sky-bottom: #07111f;
-  --city-far: #0d2742;
-  --city-near: #061120;
-  --window: #baf3ff;
-  --vignette: rgb(3 8 15 / 0.7);
-  --particle: #baf3ff;
-  --particle-glow: 0 0 6px rgb(186 243 255 / 0.8);
+  --sky-top: #07111f;
+  --sky-mid: #0a1c33;
+  --sky-low: #123652;
+  --sky-horizon: #1a5a6e;
+  --sky-bottom: #0a1628;
+  --city-far: #143651;
+  --city-near: #0b1e32;
+  --window: #fde68a;
+  --vignette: rgb(4 12 22 / 0.55);
+  --particle: #99f6e4;
+  --particle-glow: 0 0 8px rgb(56 189 248 / 0.75);
 
-  --scene-ambient: radial-gradient(50% 55% at 50% 60%, rgb(34 211 238 / 0.13), rgb(56 189 248 / 0.04) 60%, transparent);
-  --scene-pool: rgb(34 211 238 / 0.22);
-  --floor-grid-x: rgb(56 189 248 / 0.1);
-  --floor-grid-y: rgb(56 189 248 / 0.08);
-  --desk-top-1: #2a4a6b;
-  --desk-top-2: #10263d;
-  --desk-lip-1: #2c5179;
-  --desk-lip-2: #0d2036;
-  --desk-front-1: #0f2741;
-  --desk-front-2: #08162a;
-  --desk-front-tint: rgb(34 211 238 / 0.14);
-  --desk-edge: rgb(186 243 255 / 0.12);
-  --desk-edge-top: rgb(186 243 255 / 0.35);
+  --scene-ambient: radial-gradient(50% 55% at 50% 60%, rgb(45 212 191 / 0.16), rgb(56 189 248 / 0.07) 55%, transparent 75%);
+  --scene-pool: rgb(45 212 191 / 0.24);
+  --floor-grid-x: rgb(56 189 248 / 0.12);
+  --floor-grid-y: rgb(45 212 191 / 0.1);
+  --desk-top-1: #2f6a7a;
+  --desk-top-2: #163952;
+  --desk-lip-1: #3a7d8a;
+  --desk-lip-2: #123246;
+  --desk-front-1: #163a52;
+  --desk-front-2: #0c2438;
+  --desk-front-tint: rgb(45 212 191 / 0.16);
+  --desk-edge: rgb(153 246 228 / 0.18);
+  --desk-edge-top: rgb(125 211 252 / 0.4);
   --desk-shadow: none;
-  --chair-1: #16314d;
-  --chair-2: #0a1a2d;
-  --chair-pad: #1b3a5a;
-  --img-fade: rgb(7 17 31 / 0.8);
+  --chair-1: #1c4a5c;
+  --chair-2: #0f2a3c;
+  --chair-pad: #245868;
+  --img-fade: rgb(10 22 40 / 0.78);
 }
 
 :root[data-theme="light"] {
   color-scheme: light;
-  --bg: #e4e6e1;
-  --bg-2: #d5d8d2;
-  --glass: #eef0eb;
-  --cyan: #5b7b62;
-  --sky: #7a9a80;
-  --ice: #2f3431;
-  --ink: #171a18;
-  --mute: #3a403c;
-  --label: #3f4642;
-  --accent-rgb: 91 123 98;
-  --accent-2-rgb: 122 154 128;
-  --shine-rgb: 255 255 255;
-  --atmo-rgb: 140 148 138;
-  --atmo-2-rgb: 160 180 162;
-  --shadow: rgb(28 31 29 / 0.12);
+  --bg: #cfdce2;
+  --bg-2: #b9cbd4;
+  --glass: #dde8ed;
+  --cyan: #0f766e;
+  --sky: #0284c7;
+  --ice: #1a3338;
+  --ink: #0f262c;
+  --mute: #314a52;
+  --label: #3d5a63;
+  --accent-rgb: 15 118 110;
+  --accent-2-rgb: 2 132 199;
+  --shine-rgb: 240 248 250;
+  --atmo-rgb: 110 150 160;
+  --atmo-2-rgb: 80 140 145;
+  --shadow: rgb(15 38 44 / 0.16);
 
-  --glass-fill-1: rgb(238 240 235 / 0.88);
-  --glass-fill-2: rgb(229 232 226 / 0.78);
-  --glass-line: #c4c9c1;
-  --glass-shadow: inset 0 1px 0 rgb(255 255 255 / 0.55), 0 1px 2px rgb(28 31 29 / 0.06), 0 18px 40px rgb(28 31 29 / 0.1);
+  --glass-fill-1: rgb(221 232 237 / 0.92);
+  --glass-fill-2: rgb(205 221 228 / 0.86);
+  --glass-line: #9bb4be;
+  --glass-shadow: inset 0 1px 0 rgb(255 255 255 / 0.45), 0 1px 2px rgb(15 38 44 / 0.06), 0 18px 40px rgb(15 38 44 / 0.12);
 
-  --glow-dot: 0 0 0 3px rgb(91 123 98 / 0.14);
-  --glow-dot-strong: 0 0 0 4px rgb(91 123 98 / 0.18);
+  --glow-dot: 0 0 0 3px rgb(15 118 110 / 0.18);
+  --glow-dot-strong: 0 0 0 4px rgb(2 132 199 / 0.18);
   --glow-line: none;
-  --glow-hover: 0 28px 60px -24px rgb(28 31 29 / 0.22);
+  --glow-hover: 0 28px 60px -24px rgb(15 38 44 / 0.22);
   --glow-logo: none;
-  --glow-nav: 0 0 8px rgb(122 154 128 / 0.55);
+  --glow-nav: 0 0 8px rgb(15 118 110 / 0.45);
   --glow-text: none;
-  --nav-active: #5b7b62;
-  --nav-scrolled: rgb(228 230 225 / 0.94);
+  --nav-active: #0f766e;
+  --nav-scrolled: rgb(207 220 226 / 0.94);
 
-  --btn-bg: #5b7b62;
-  --btn-bg-hover: #4a6651;
+  --btn-bg: linear-gradient(120deg, #0f766e, #0284c7);
+  --btn-bg-hover: linear-gradient(120deg, #0d9488, #0ea5e9);
   --btn-ink: #ffffff;
-  --btn-shadow: 0 1px 2px rgb(28 31 29 / 0.1), 0 6px 16px -8px rgb(91 123 98 / 0.45);
-  --btn-shadow-hover: 0 1px 2px rgb(28 31 29 / 0.1), 0 12px 28px -10px rgb(91 123 98 / 0.6);
-  --ghost-bg: #e8ebe5;
-  --ghost-line: #b8beb6;
-  --ghost-bg-hover: #dde3db;
-  --ghost-line-hover: #9fb5a3;
+  --btn-shadow: 0 1px 2px rgb(15 38 44 / 0.12), 0 8px 20px -8px rgb(15 118 110 / 0.45);
+  --btn-shadow-hover: 0 1px 2px rgb(15 38 44 / 0.12), 0 14px 28px -10px rgb(2 132 199 / 0.45);
+  --ghost-bg: #d5e2e8;
+  --ghost-line: #8eacb7;
+  --ghost-bg-hover: #c5dde0;
+  --ghost-line-hover: #0f766e;
 
-  --sky-top: #e6e8e3;
-  --sky-mid: #e4e6e1;
-  --sky-low: #dcdfd9;
-  --sky-horizon: #d5d8d2;
-  --sky-bottom: #d0d4cd;
-  --city-far: #c8ccc5;
-  --city-near: #bcc1b9;
-  --window: #9fb5a3;
-  --vignette: rgb(28 31 29 / 0.06);
-  --particle: #8e948c;
+  --sky-top: #d4e2e8;
+  --sky-mid: #cfdce2;
+  --sky-low: #c0d2da;
+  --sky-horizon: #b3c7d0;
+  --sky-bottom: #a7bec8;
+  --city-far: #95b0bb;
+  --city-near: #829ea9;
+  --window: #f59e0b;
+  --vignette: rgb(15 38 44 / 0.08);
+  --particle: #2dd4bf;
   --particle-glow: none;
 
-  --scene-ambient: radial-gradient(50% 55% at 50% 62%, rgb(122 154 128 / 0.1), transparent 70%);
-  --scene-pool: rgb(160 180 162 / 0.45);
-  --floor-grid-x: rgb(91 123 98 / 0.08);
-  --floor-grid-y: rgb(91 123 98 / 0.08);
-  --desk-top-1: #eef0eb;
-  --desk-top-2: #dde1db;
-  --desk-lip-1: #e8ebe5;
-  --desk-lip-2: #cfd4cd;
-  --desk-front-1: #e8ebe5;
-  --desk-front-2: #d5d9d3;
-  --desk-front-tint: rgb(122 154 128 / 0.07);
-  --desk-edge: #b8beb6;
-  --desk-edge-top: #b8beb6;
-  --desk-shadow: 0 30px 60px -28px rgb(28 31 29 / 0.28);
-  --chair-1: #e0e3de;
-  --chair-2: #b8beb6;
-  --chair-pad: #cfd4cd;
-  --img-fade: rgb(28 31 29 / 0.34);
+  --scene-ambient: radial-gradient(50% 55% at 50% 62%, rgb(15 118 110 / 0.12), rgb(2 132 199 / 0.07) 55%, transparent 75%);
+  --scene-pool: rgb(45 180 170 / 0.28);
+  --floor-grid-x: rgb(15 118 110 / 0.12);
+  --floor-grid-y: rgb(2 132 199 / 0.1);
+  --desk-top-1: #dde8ed;
+  --desk-top-2: #c0d2da;
+  --desk-lip-1: #d5e2e8;
+  --desk-lip-2: #a7bec8;
+  --desk-front-1: #d5e2e8;
+  --desk-front-2: #b9cbd4;
+  --desk-front-tint: rgb(15 118 110 / 0.1);
+  --desk-edge: #8eacb7;
+  --desk-edge-top: #8eacb7;
+  --desk-shadow: 0 30px 60px -28px rgb(15 38 44 / 0.28);
+  --chair-1: #c8d8df;
+  --chair-2: #95b0bb;
+  --chair-pad: #b3c7d0;
+  --img-fade: rgb(15 38 44 / 0.38);
 }
 
 html {
@@ -253,7 +253,7 @@ body {
   }
 
   .gradient-text {
-    background: linear-gradient(100deg, var(--ink) 10%, var(--ice) 45%, var(--cyan) 75%, var(--sky) 100%);
+    background: linear-gradient(105deg, var(--ink) 8%, #99f6e4 38%, var(--cyan) 62%, var(--sky) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -417,17 +417,20 @@ body {
     border-radius: 20px;
   }
 
-  .gradient-text {
-    background: none;
-    color: var(--color-ink);
-  }
   .name-accent {
-    color: #4a6651;
+    color: #0f766e;
     font-weight: 700;
   }
   .hero-role {
-    color: #4a6651;
+    color: #0284c7;
     font-weight: 600;
+  }
+
+  .gradient-text {
+    background: linear-gradient(105deg, #12303a 10%, #0f766e 55%, #0284c7 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .text-mute,
@@ -443,9 +446,9 @@ body {
 
   /* The bar is nearly opaque white, so a backdrop blur here stays neutral even on GPUs that mangle it. */
   .navbar {
-    background: rgb(228 230 225 / 0.88);
-    border-color: #b8beb6;
-    box-shadow: 0 8px 30px rgb(28 31 29 / 0.1);
+    background: rgb(207 220 226 / 0.9);
+    border-color: #8eacb7;
+    box-shadow: 0 8px 30px rgb(15 38 44 / 0.12);
     -webkit-backdrop-filter: blur(18px);
     backdrop-filter: blur(18px);
   }

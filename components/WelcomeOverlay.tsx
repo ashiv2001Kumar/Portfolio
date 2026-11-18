@@ -56,7 +56,7 @@ export default function WelcomeOverlay() {
   return (
     <div
       aria-hidden="true"
-      className="fixed inset-0 z-[9999] grid place-items-center overflow-hidden"
+      className="fixed inset-0 z-9999 grid place-items-center overflow-hidden"
       style={{
         pointerEvents: leaving ? "none" : "auto",
         opacity: leaving ? 0 : 1,

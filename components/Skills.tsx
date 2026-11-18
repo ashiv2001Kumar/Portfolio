@@ -17,7 +17,7 @@ export default function Skills() {
           const techs = technologies.filter((t) => t.group === group.title);
           return (
             <Reveal key={group.title} delay={i * 0.08}>
-              <article className="glass group h-full rounded-2xl p-6 transition-[border-color,box-shadow] duration-300 hover:border-cyan/30 hover:shadow-[var(--glow-hover)]">
+              <article className="glass group h-full rounded-2xl p-6 transition-[border-color,box-shadow] duration-300 hover:border-cyan/30 hover:shadow-(--glow-hover)">
                 <div className="flex items-center justify-between">
                   <span className="grid h-10 w-10 place-items-center rounded-xl border border-cyan/30 bg-cyan/10 font-mono text-xs text-cyan">
                     0{i + 1}
@@ -36,7 +36,7 @@ export default function Skills() {
                       </div>
                       <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-ice/15">
                         <div
-                          className="h-full rounded-full shadow-[var(--glow-line)]"
+                          className="h-full rounded-full shadow-(--glow-line)"
                           style={{
                             width: `${t.level}%`,
                             background: "linear-gradient(90deg, rgb(var(--accent-rgb)), rgb(var(--accent-2-rgb)))",
